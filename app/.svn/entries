@@ -1,0 +1,58 @@
+8
+
+dir
+8963
+https://oa.kingnode.com:8443/svn/ECM-temp/trunk/Code/ecm/mobile/contact/contactlist/app
+https://oa.kingnode.com:8443/svn/ECM-temp
+
+
+
+2014-03-06T09:35:32.352000Z
+8121
+pijinwei
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+eb1ebadf-8a40-9045-aab7-457a735f47e5
+
+model
+dir
+
+profile
+dir
+
+controller
+dir
+
+form
+dir
+
+view
+dir
+
+store
+dir
+
+Readme.md
+file
+
+
+
+
+2014-03-25T07:03:17.318391Z
+ad39889fe6edcb0d75e25fb58b667e20
+2014-02-11T05:28:03.745610Z
+7141
+dengliwei
+

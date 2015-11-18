@@ -1,0 +1,36 @@
+Ext.define('contactlist.view.GroupIM',{
+	extend:'Ext.Container',
+	xtype:'groupim',
+	config:{
+		gid:'',
+		groupName:'',
+		id:'groupim',
+		items:[
+			{
+				xtype:'toolbar',
+				docked:'top',
+				title:'',
+				items:[
+					{
+						text:'返回',
+						handler:function(){history.go(-1);},
+						pressedCls:false
+					},
+					{
+						text:'测试',
+						handler:function(){
+							
+							var data = {groupid:'1',senterid:'338',msg:'ssssssss'};
+							Ext.socket.emit('groupMsg',data);
+						}
+					},{xtype:'spacer'},
+					{
+						iconCls:'user',
+						pressedCls:false,
+						name:'viewGroupInfo'
+					}
+				]
+			}
+		]
+	}
+});

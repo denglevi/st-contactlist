@@ -1,0 +1,21 @@
+Ext.define('contactlist.controller.Communication',{
+	extend:'Ext.app.Controller',
+	config:{
+		refs:{
+			'communication':{
+				autoCreate:true,
+				xtype:'communication',
+				selector:'communication'
+			}
+		},
+		control:{
+			
+		},
+		routes:{
+			'communication':'showCommunication'
+		}
+	},
+	showCommunication:function(){
+		Ext.Viewport.animateActiveItem(this.getCommunication(),{type:'slide'});
+	}
+});

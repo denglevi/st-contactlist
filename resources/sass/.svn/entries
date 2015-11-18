@@ -1,0 +1,70 @@
+8
+
+dir
+8963
+https://oa.kingnode.com:8443/svn/ECM-temp/trunk/Code/ecm/mobile/contact/contactlist/resources/sass
+https://oa.kingnode.com:8443/svn/ECM-temp
+
+
+
+2014-02-11T05:28:03.745610Z
+7141
+dengliwei
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+eb1ebadf-8a40-9045-aab7-457a735f47e5
+
+cupertino-classic.scss
+file
+
+
+
+
+2014-03-25T07:03:28.910054Z
+e97013a11ca09b942dfc6498543ae918
+2014-02-11T05:28:03.745610Z
+7141
+dengliwei
+
+config.rb
+file
+
+
+
+
+2014-03-25T07:03:28.914054Z
+d02ee7ddff8ff4c2620d68f02b7e41ca
+2014-02-11T05:28:03.745610Z
+7141
+dengliwei
+
+.sass-cache
+dir
+
+app.scss
+file
+
+
+
+
+2014-03-25T07:03:28.919054Z
+7202c8225393255e5223b4e859fdd12d
+2014-02-11T05:28:03.745610Z
+7141
+dengliwei
+
+stylesheets
+dir
+

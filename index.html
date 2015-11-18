@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html manifest="" lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>contactlist</title>
+<style>
+#appLoadingIndicator{
+    margin-top:150px;
+    text-align:center;
+}
+#appLoadingIndicator .logo{
+    font-size:2.5em;
+    text-align:
+    center;color:#344e83;
+    font-weight:bold;
+    text-shadow:1px 1px 1px #394c77;
+}
+
+#appLoadingIndicator .status{
+    text-align:center;
+    margin-top:50px;
+    font-size:1em;
+    color:#344e83
+}
+#appLoadingIndicator #load{
+    text-align:center;
+    font-size:1em;
+    color:#344e83;
+    overflow: hidden;
+    width:65%;
+    margin:0 auto;
+}
+
+</style>
+    <script type="text/javascript" src=".sencha/app/microloader/development.js"></script>
+    <script type="text/javascript" src="http://test.kingnode.com:8011/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+    <script type="text/javascript" src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>
+</head>
+<body>
+<div id="appLoadingIndicator">
+    <div class="text logo">诺德通讯录</div>
+    <div class="spinner"></div>
+    <div class="text status">程序正在加载中</div>
+    <div id="load"></div>
+</div>
+</body>
+<script>
+	var load = document.getElementById('load');
+	var times = document.getElementById('time');
+	var time = 0;
+	var dot = '.';
+	function setHtml(){
+		for(var i=0;i<3;i++){
+			dot += '.';
+			if(time == i) {
+				load.innerHTML = dot;
+				return;
+			}
+		}
+	}
+	var timeId = setInterval(setHtml,500);
+window.constructor.prototype.setLoginInfos = function(o) {
+	var name = eval("("+o+")");
+	var user = name.loginName;
+	localStorage.setItem("username",user);
+};
+function photoFinish(fileName,fileData){
+	var url="data:image/png;base64,"+fileData;
+	//var new_url = URLEncode(fileData);
+	$('#headPhoto').attr('src',url);
+}
+function loadURL(url) {
+	var iFrame;
+	iFrame = document.createElement("iframe");
+	iFrame.setAttribute("src", url);
+	iFrame.setAttribute("style", "display:none;");
+	iFrame.setAttribute("height", "0px");
+	iFrame.setAttribute("width", "0px");
+	iFrame.setAttribute("frameborder", "0");
+	document.body.appendChild(iFrame);
+	//发起请求后这个iFrame就没用了，所以把它从dom上移除掉
+	iFrame.parentNode.removeChild(iFrame);
+	iFrame = null;
+}
+</script>
+</html>

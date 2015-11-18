@@ -1,0 +1,49 @@
+Ext.define('contactlist.controller.AddGroup',{
+	extend:'Ext.app.Controller',
+	config:{
+		refs:{
+			addGroup:{
+				autoCreate:true,
+				selector:'addgroup-form',
+				xtype:'addgroup-form'
+			},
+			'addGroupUser':'#addGroupUser',
+			'saveGroup':'#saveGroup'
+		},
+		control:{
+			addGroupUser:{
+				tap:'addGroupUser'
+			},
+			saveGroup:{
+				tap:'saveGroup'
+			}
+		},
+		routes:{
+			'addGroup':'showAddGroup'
+		}
+	},
+	showAddGroup:function(){
+		Ext.Viewport.animateActiveItem(this.getAddGroup(),{type:'slide',direction:'left'});
+	},
+	addGroupUser:function(){
+		this.redirectTo('addGroupUser/0');
+	},
+	saveGroup:function(){
+		var groupName = Ext.getCmp('groupName').getValue(),me = this,
+			groupUser = Ext.getCmp('groupUser').getHtml();
+		Ext.Ajax.request({
+		    //url:Ext.customURL+'api.php/editContact',
+			url:'http://localhost/new_oa/mobile2/api.php/buildGroup',
+		    params: {
+		        name:groupName,
+		        groupUser:groupUser
+		    },
+		    timeout:5000,
+		    method:'POST',
+		    success: function(response){
+		    	me.redirectTo('myGroup');
+		    	return;
+		    }
+		});		
+	}
+});

@@ -1,0 +1,37 @@
+Ext.define('contactlist.controller.GroupDetail',{
+	extend:'Ext.app.Controller',
+	config:{
+		refs:{
+			groupDetail:{
+				autoCreate:true,
+				selector:'groupdetail',
+				xtype:'groupdetail'
+			},
+			contacts:{
+				autoCreate:true,
+				selector:'addgroupuser',
+				xtype:'addgroupuser'
+			}
+		},
+		control:{
+			groupDetail:{
+				'addGroupUser':'addGroupUser'
+			}
+		},
+		routes:{
+			'groupDetail':'showGroupDetail'
+		}
+	},
+	showGroupDetail:function(){
+		Ext.Viewport.animateActiveItem(this.getGroupDetail(),{type:'slide',direction:'left'});
+	},
+	showAddGroup:function(){
+		this.redirectTo('addGroup');
+	},
+	addGroupUser:function(id,gid){
+		this.getContacts().gid = gid;
+		//console.log(gid);
+		//Ext.Viewport.animateActiveItem(this.getContacts(),{type:'slide'});
+		this.redirectTo('addGroupUser/'+id);
+	}
+});
